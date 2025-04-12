@@ -12,6 +12,6 @@ nolib:
 
 	
 push:
-	git add ..
+	git add .
 	git commit -m " +1 commit "
 	git push

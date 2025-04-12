@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.4.12)  12 APR 2025 12:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.4.12)  12 APR 2025 12:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -464,20 +464,20 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (./ModularForms.aux)
 \openout1 = `ModularForms.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -550,20 +550,20 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'ModularForms.bbl' found.
 
 (./ModularForms.bbl)
-Package biblatex Info: Reference section=0 on input line 30.
-Package biblatex Info: Reference segment=0 on input line 30.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+Package biblatex Info: Reference section=0 on input line 29.
+Package biblatex Info: Reference segment=0 on input line 29.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 31.
 
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-8.
+7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
@@ -592,9 +592,9 @@ n/ec/ecbx1000.600pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/jkna
 ppen/ec/ecrm1200.600pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/j
 knappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb>
-Output written on ModularForms.pdf (1 page, 41777 bytes).
+Output written on ModularForms.pdf (1 page, 43252 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
+ 173 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
