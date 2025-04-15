@@ -8,6 +8,7 @@ all:
 	
 
 nolib: 
+	rm ModularForms.bcf
 	$(EXE) ModularForms.tex
 
 	
