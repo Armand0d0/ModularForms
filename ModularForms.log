@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.4.12)  15 APR 2025 22:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.4.12)  6 MAY 2025 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -464,20 +464,20 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (./ModularForms.aux)
 \openout1 = `ModularForms.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -550,57 +550,80 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'ModularForms.bbl' found.
 
 (./ModularForms.bbl)
-Package biblatex Info: Reference section=0 on input line 29.
-Package biblatex Info: Reference segment=0 on input line 29.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 31.
+Package biblatex Info: Reference section=0 on input line 30.
+Package biblatex Info: Reference segment=0 on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
 
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
-2.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./ModularForms.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 77--79
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+<sphere.png, id=25, 414.54875pt x 162.6075pt>
+File: sphere.png Graphic file (type png)
+<use sphere.png>
+Package pdftex.def Info: sphere.png  used on input line 183.
+(pdftex.def)             Requested size: 414.54773pt x 162.6071pt.
+[3]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+99.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+) [4 <./sphere.png>] (./ModularForms.aux)
 Package logreq Info: Writing requests to 'ModularForms.run.xml'.
 \openout1 = `ModularForms.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12397 strings out of 478051
- 225796 string characters out of 5840943
- 1855330 words of memory out of 5000000
- 32398 multiletter control sequences out of 15000+600000
+ 12408 strings out of 478051
+ 225951 string characters out of 5840943
+ 1862330 words of memory out of 5000000
+ 32408 multiletter control sequences out of 15000+600000
  525695 words of font info for 68 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,6n,68p,685b,1723s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 63i,12n,68p,685b,1723s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.6
 00pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc100
 0.600pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti
 1000.600pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-crm1000.600pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecbx1000.600pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/jknappe
+cbx1000.600pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecrm1000.600pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/jknappe
 n/ec/ecbx2074.600pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/jkna
 ppen/ec/ecbx1440.600pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfour/j
 knappen/ec/ecrm1200.600pk> </home/armando/.texlive2022/texmf-var/fonts/pk/ljfou
 r/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
->
-Output written on ModularForms.pdf (1 page, 95593 bytes).
+amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ModularForms.pdf (4 pages, 197500 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 366 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
