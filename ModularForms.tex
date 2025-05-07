@@ -61,8 +61,15 @@ $\varphi \circ \psi^{-1} : \psi(U\cap V) \subset \mathbb{R}^n \to \varphi(U\cap 
 \paragraph{Definition 1.4} A map $f : \mathcal{M}_1 \to \mathcal{M}_2$ between two Riemann surfaces is said to be holomorphic if for each charts $(U,\varphi),(V,\psi)$
 of $\mathcal{M}_1,\mathcal{M}_2$ respectively, the complex function $\psi \circ f \circ \varphi^{-1}$ is holomorphic over $\varphi(U\cap f^{-1}(V))$.
 
+\paragraph{Definition 1.5} (Unformal) \\ Intuitively the genus of a Riemann surface is the number of its holes as a multiple torus. 
+
+\includegraphics[scale=0.7]{genus}
+
+{\itshape \paragraph{} More formally the genus of $X$ can be defined as half the dimension of $H_1(X,\mathbb{C})$, the first singular homology group.  } 
 
 
+\paragraph{Theorem 1.6} (Classification of compact Riemann surfaces) \\ 
+Two compact Riemann surfaces are homeomorphic to eachother if and only if they have the same genus.
 
 
 \section{Lattices and complex tori}%------------------------------------------------------------------------------------------------------------------------------------
@@ -71,16 +78,16 @@ of $\mathcal{M}_1,\mathcal{M}_2$ respectively, the complex function $\psi \circ 
 $\mathbb{R}$-basis of $\mathbb{C}$. 
 {\itshape \paragraph{} This is equivalent to  $\frac{\omega_1}{\omega_2} \notin \mathbb{R}$. We can suppose that $\frac{\omega_1}{\omega_2} \in \mathcal{H}$ for convenience.
 }
-\paragraph{Definition 2.2} We say that two lattices $\Lambda$ and $\Lambda'$ are isogenuous if there exists an $m\in \mathbb{C}$ such that 
+\paragraph{Definition 2.2} We say that two lattices $\Lambda$ and $\Lambda'$ are isomorphic if there exists an $m\in \mathbb{C}$ such that 
 $m\Lambda = \Lambda'$.
 
-\paragraph{Proposition 2.3} Every lattice $\Lambda = \omega_1\mathbb{Z} \oplus \omega_2\mathbb{Z}$ is isogenuous to  $\mathbb{Z} \oplus \tau\mathbb{Z}$ 
+\paragraph{Proposition 2.3} Every lattice $\Lambda = \omega_1\mathbb{Z} \oplus \omega_2\mathbb{Z}$ is isomorphic to  $\mathbb{Z} \oplus \tau\mathbb{Z}$ 
 for some $\tau \in \mathcal{H}$.\\
 
-{\itshape Proof : $\omega_1 \neq 0$ so we can consider the isogenuous lattice $(\frac{1}{\omega_1})\Lambda = \mathbb{Z} \oplus \tau\mathbb{Z}$ with 
+{\itshape Proof :} $\omega_1 \neq 0$ so we can consider the isomorphic lattice $(\frac{1}{\omega_1})\Lambda = \mathbb{Z} \oplus \tau\mathbb{Z}$ with 
 $\tau = \frac{\omega_2}{\omega_1}$, if $\tau \notin \mathcal{H}$ then $-\tau \in \mathcal{H}$ and $\mathbb{Z} \oplus -\tau\mathbb{Z} = \mathbb{Z} \oplus \tau\mathbb{Z}$.
-}
-\paragraph{Proposition 2.4} Two lattices $\Lambda = \mathbb{Z} \oplus \tau\mathbb{Z}$ and $\Lambda' = \mathbb{Z} \oplus \tau'\mathbb{Z}$ are isogenuous if and only if
+
+\paragraph{Proposition 2.4} Two lattices $\Lambda = \mathbb{Z} \oplus \tau\mathbb{Z}$ and $\Lambda' = \mathbb{Z} \oplus \tau'\mathbb{Z}$ are isomorphic if and only if
 $\tau' = \gamma \cdot \tau$ for some $\gamma \in SL_2(\mathbb{Z})$.
 
 
@@ -90,14 +97,14 @@ $\tau' = \gamma \cdot \tau$ for some $\gamma \in SL_2(\mathbb{Z})$.
 
 \paragraph{Proposition 2.6} The quotient topology over $\mathbb{C} / \Lambda$ makes it a Riemann surface.
 
-\paragraph{Definition 2.7} An \textbf{isogeny} of complex tori $\varphi : \mathbb{C} / \Lambda \to \mathbb{C} / \Lambda'$ is a holomorphic 
-group isomorphism. $\mathbb{C} / \Lambda$ and $\mathbb{C} / \Lambda'$ are then said to be isogenuous.
+\paragraph{Definition 2.7} An \textbf{isomorphism} of complex tori $\varphi : \mathbb{C} / \Lambda \to \mathbb{C} / \Lambda'$ is a holomorphic 
+group isomorphism. $\mathbb{C} / \Lambda$ and $\mathbb{C} / \Lambda'$ are then said to be isomorphic.
 
-\paragraph{Theorem 2.8}  Two complex tori $\mathbb{C} / \Lambda$ and $\mathbb{C} / \Lambda'$ are isogenuous if and only if  $\Lambda$ and $\Lambda'$ are isogenuous.
+\paragraph{Theorem 2.8}  Two complex tori $\mathbb{C} / \Lambda$ and $\mathbb{C} / \Lambda'$ are isomorphic if and only if  $\Lambda$ and $\Lambda'$ are isomorphic.
 
 
-{\itshape \paragraph{}Remark: The map  $\Psi: \Lambda \mapsto \mathbb{C}/\Lambda$ is  a bijection from the set of lattices to the set of complex tori that preserves isogengy. 
-Therefore, the categories of lattices up to isogeny and complex tori up to isogengy are equivalent.
+{\itshape \paragraph{}Remark: The map  $\Psi: \Lambda \mapsto \mathbb{C}/\Lambda$ is  a bijection from the set of lattices to the set of complex tori that
+ preserves isomorphism. Therefore, the categories of lattices up to isomorphism and complex tori up to isomorphism are equivalent.
 }
 \section{Complex tori and elliptic curves}%------------------------------------------------------------------------------------------------------------------------------------
 \paragraph{Definition 3.1} Given a sub-field $\mathbb{K}$ of $\mathbb{C}$, an \textbf{elliptic curve} over $\mathbb{K}$ is the set of points $(x,y) \in \mathbb{K}^2$ such that 
@@ -105,11 +112,12 @@ Therefore, the categories of lattices up to isogeny and complex tori up to isoge
 {\itshape \paragraph{} Remark: The condition $a^3-27b^2 \neq 0$ correspond to the curve being smooth.
 }
 
-\paragraph{Definition 3.2} An isogeny of moduar curves is a map  between two modular curves such that $ \phi(x,y) = (R_1(x,y),R_2(x,y))$ 
-with $R_1$ and $R_2$ two rational fuctions and that is also a group morphism.
+\paragraph{Definition 3.2} An isogeny of elliptic curves is a map  between two elliptic curves such that $ \phi(x,y) = (R_1(x,y),R_2(x,y))$ 
+with $R_1$ and $R_2$ two rational fuctions and that is also a group morphism. And an isogeny that is also a group isomorphism is called an isomorphism of
+elliptic curves.
 
-\paragraph{Proposition 3.3} If there is an isogeny $\phi$ from $E1$ to $E2$ then there is an isogeny
-$\psi : E_1 \to E_2$ called the dual isogeny, and we say that $E1$ and $E2$ are isogenuous.
+\paragraph{Proposition 3.3} If there is an isogeny $\phi$ from $E_1$ to $E_2$ then there is an isogeny
+$\psi : E_1 \to E_2$ called the dual isogeny, and we say that $E_1$ and $E_2$ are isogenuous.
 This defines an equivalence relation.
 
 {\itshape \paragraph{}Remark: It can be shown that every curve that is the zero set of a polynomial of the form : 
@@ -121,7 +129,7 @@ whose solutions of the form (x,y,1) satisfies the equation : \[\ y^2 = x^3 + bx 
 
 
 
-\paragraph{Definition 3.4} Given a complex latice $\Lambda$, the Weierstrass function $\wp$ is defined by : 
+\paragraph{Definition 3.4} Given a complex lattice $\Lambda$, the Weierstrass function $\wp$ is defined by : 
 \[\ \wp(z) = \frac{1}{z^2} +  \sum_{\omega \in \Lambda , \omega \neq 0 }\frac{1}{(z - \omega)^2} - \frac{1}{\omega^2} \]
 \paragraph{Proposition 3.5} $\wp$ and $\wp'$ are $\Lambda$-periodic.
 
@@ -150,50 +158,75 @@ This makes the map :$  \left\{ \begin{array}{rcl} \mathbb{C}/\Lambda & \longrigh
 \paragraph{Theorem 3.9} Let $E_{\Lambda}$ and $E_{\Lambda'}$ be some elliptic curves associated to the lattices $\Lambda$ and $\Lambda'$ respectively,
 then the following statements are equivalent :\\
 
-  $i)$ $E_{\Lambda}$ and $E_{\Lambda'}$ are isogenuous
+  $i)$ $E_{\Lambda}$ and $E_{\Lambda'}$ are isomorphic
   
-  $ii)$  $\mathbb{C}/\Lambda$ and $\mathbb{C}/\Lambda'$ are isogenuous.
+  $ii)$  $\mathbb{C}/\Lambda$ and $\mathbb{C}/\Lambda'$ are isomorphic.
   
-  $iii)$  $\Lambda$ and $\Lambda'$ are isogenuous. \\ 
+  $iii)$  $\Lambda$ and $\Lambda'$ are isomorphic. \\ 
   
-{\itshape \paragraph{}This theorem reduces the problem of parametrization of elliptic curves up to isogeny to the much simpler problem of parametrization of
- lattices up to isogeny.
+{\itshape \paragraph{}This theorem reduces the problem of parametrization of elliptic curves up to isomorphism to the much simpler problem of parametrization of
+ lattices up to isomorphism. In what follows we will identify those 3 categories as the same mathematical objects.
 }
 
 \section{Modular curves}%------------------------------------------------------------------------------------------------------------------------------------
 
-{\itshape \paragraph{} In this section we are looking for a moduli spaces (i.e a space that parametrize) of latices up to isogeny 
-or equivlalently of elliptic curvesup to isogengy.
+{\itshape \paragraph{} In this section we are looking for a moduli spaces (i.e a space that parametrize) of elliptic curves up to isogeny. 
 }
 
 
 
 \paragraph{Definition 4.1} Let $\Gamma$ be a congruence subgroup of $SL_2(\mathbb{Z})$, we define the modular curve associated to $\Gamma$ by
- $Y(\Gamma) := \{ \Gamma\tau , \tau \in \mathcal{H} \}$ , i.e the set of orbits of the action of $\Gamma$ on $\mathcal{H}$.
+ $Y(\Gamma) := \{ \Gamma\tau , \tau \in \mathcal{H} \}$ , i.e the set of orbits of the action of $\Gamma$ on $\mathcal{H}$. We also denote $Y_0(N)$ for $Y(\Gamma_0(N))$
+ and $Y_1(N)$ for $Y(\Gamma_1(N))$.
 
-\paragraph{Definition 4.2} The fundamental domain $\mathcal{D} \subset \mathcal{H}$ of the modular form $Y(\Gamma)$ is
+
+\paragraph{Proposition } Each point of $Y(SL_2(\mathbb{Z}))$ correspond to a unique elliptic curve isomorphism class.
+
+{\itshape \paragraph{}Proof : } Points $\tau, \tau' \in \mathbb{C}$ are in the same orbit iff $\tau' = \gamma \cdot \tau$ for some $\gamma \in SL_2(\mathbb{Z})$.
+This is equivalent by proposition  2.4 to $\mathbb{Z} \oplus \tau\mathbb{Z}$ and $\mathbb{Z} \oplus \tau'\mathbb{Z}$ being isomorphic.
+
+
+
+{\itshape \paragraph{} This last proposition says that $Y(SL_2(\mathbb{Z}))$ is a moduli space of elliptic curves up to isomorphism, we will now answer the question :
+what classes of elliptic curves does the modular curves $Y_0(N)$ and $Y_1(N)$ represent ?  } 
+
+\paragraph{Definition } We call a pair $(E,p)$ a pointed elliptic curve if $E$ is an elliptic curve and $p$ is a $N$-torsion point on $E$ 
+(seen as an abelian quotient group $\mathbb{C}/ \Lambda$). And we say that two pointed elliptic curves $(E,p)$ and $(E',p')$ are isomorphic if there is an isomorphism
+$\phi: E\to E'$ such that $\phi(p) = p'$.
+
+\paragraph{Definition } We call a pair $(E,C)$ an enhanced elliptic curve if $E$ is an elliptic curve and $C$ is a cyclic subgroup of $E$ of order $N$. 
+And we say that two enhanced elliptic curves $(E,C)$ and $(E',C')$ are isomorphic if there is an isomorphism
+$\phi: E\to E'$ such that $\phi(C) = C'$.
+
+\paragraph{Theorem }\textbf{(Moduli spaces $Y_1(N)$ and $Y_0(N)$ )} \\- Each point of $Y_1(N)$ correspond to a unique pointed elliptic curve isomorphism class.\\
+ - Each point of $Y_0(N)$ correspond to a unique enhanced elliptic curve isomorphism class.
+
+ {\itshape \paragraph{} It follows from Chow's theorem and the Rieman-Roch theorem that compact Riemann surfaces are complex algebraic curves,
+  this and Theorem 1.6 gives us motivation to make $Y(\Gamma) $ a compact Rieman surface. }
+
+
+\paragraph{Definition } The fundamental domain $\mathcal{D} \subset \mathcal{H}$ of the modular form $Y(\Gamma)$ is
 a region that contains exactly one point from each orbit of $\Gamma$ action except some
 possible duplication on the edge.
 
-\paragraph{Proposition} The region $\mathcal{D} = \{ \tau \in \mathcal{H}  |\tau| \geq 1 and |Re(\tau)| \leq 1/2\}$ is a fundamental domain for $Y(1)$.
+\paragraph{Proposition} The region $\mathcal{D} = \{ \tau \in \mathcal{H}  |\tau| \geq 1 \; and \; |Re(\tau)| \leq 1/2\}$ is a fundamental domain for $Y(SL_2(\mathbb{Z}))$.
 
-{\itshape \paragraph{} After identification of duplicate points on the edge we see that $Y(1) \simeq SL_2(\mathbb{Z})\backslash \mathcal{D}$ is a punctured sphere.
+{\itshape \paragraph{} After identification of duplicate points on the edge we see that $Y(SL_2(\mathbb{Z})) \simeq SL_2(\mathbb{Z})\backslash \mathcal{D}$ is a punctured sphere.
 }
 
 \includegraphics[scale=1.0]{sphere}
 
-\paragraph{Proposition}  $Y(1)$ can be made a Riemann surface and compactified into $X(1)$ by adding a point at infinity.
+\paragraph{Proposition}  $Y(SL_2(\mathbb{Z}))$ can be made a Riemann surface and compactified into $X(1)$ by adding a point at infinity.
 
 
 
-\paragraph{Proposition} Similarly for any congruece subgroup $\Gamma$, $Y(\Gamma)$ can be made a Riemann surface and compactified into $X(\Gamma)$
+\paragraph{Proposition} Similarly for any congruence subgroup $\Gamma$, $Y(\Gamma)$ can be made a Riemann surface and compactified into $X(\Gamma)$
  by adding a finite number of points. We will denote $X(\Gamma_0(N))$ as $X_0(N)$ for any integer $N$. 
 
 \paragraph{Definition} A complex elliptic curve $E$ is said to be \textbf{modular} if there exists an integer $N$ such that there is a surjection holomorphic map $\varphi$ 
 from the modular curve $X_0(N)$ to $E$ as Riemann surfaces. $\varphi$ is the called a modular parametrization of $E$.
 
-\paragraph{TODO} congruence subgroup,  morphisms between Riemann surfaces,
-ex ref \cite{zhou} $G_2$ $g_2(\Lambda)$ Eisenstein series genus...
+\paragraph{TODO} congruence subgroup, ex ref \cite{zhou} $G_2$ $g_2(\Lambda)$ Eisenstein series genus...
 
 
 \printbibliography %Prints bibliography
