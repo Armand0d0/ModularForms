@@ -24,7 +24,7 @@
 \addbibresource{bibliography.bib} %Import the bibliography file
 
 
-\title{Modular Forms, and Elliptic curves and Modular curves}
+\title{Modular Forms, Elliptic curves and Modular curves}
 \author{Armand Perrin, Samy, Damian}
 
 \begin{document}
@@ -32,7 +32,7 @@
 \maketitle%---------------------------------------------------------------
 \part{The Modularity Theorem}
 
-The modularity theorem was first partially proven by Andrew Wiles in 1995 (before known as the Taniyama-Shimura conjecture) 
+\paragraph{}The modularity theorem was first partially proven by Andrew Wiles in 1995 (before known as the Taniyama-Shimura conjecture) 
 and led to a proof of Fermat's Last theorem (1637). The proof was then completed in 2001, showing a strong connexion between 
 two kind of objects : modular forms and elliptic curves. In this part we will introduce some notions in order to understand 
 the statement of the modularity theorem : 
@@ -42,7 +42,6 @@ the statement of the modularity theorem :
 
 
 \section{Riemann surfaces}%------------------------------------------------------------------------------------------------------------------------------------
-{\itshape A Riemann surface is a connected one-dimensional complex manifold, in this section we will specify what it means.}
 
 \paragraph{Definition 1.1} A $n$-manifold $\mathcal{M}$ is a Hausdorff topological space locally homeomorphic to $\mathbb{R}^n$.
 This means that for every point $p \in \mathcal{M}$ there exists an open neighborhood $U$ of $p$ and an homeomorphism $\varphi : U \to \mathbb{R}^n$ to an open subset
@@ -133,9 +132,31 @@ whose solutions of the form (x,y,1) satisfies the equation : \[\ y^2 = x^3 + bx 
 \[\ \wp(z) = \frac{1}{z^2} +  \sum_{\omega \in \Lambda , \omega \neq 0 }\frac{1}{(z - \omega)^2} - \frac{1}{\omega^2} \]
 \paragraph{Proposition 3.5} $\wp$ and $\wp'$ are $\Lambda$-periodic.
 
-\paragraph{Proposition 3.6} The Weierstrass function satisfies the differential equation : 
+\paragraph{Theorem 3.6} The Weierstrass function satisfies the differential equation : 
 
-\[\ \wp'^2 = 4\wp^3 - g_2(\Lambda)\wp - g_3(\Lambda) \]
+\[\ \wp'^2 = 4\wp^3 - g_2(\Lambda)\wp - g_3(\Lambda) \] for two complex numbers $g_2(\Lambda)$ and $g_3(\Lambda)$.
+
+{\itshape \paragraph{} Proof :} For $z$ close to 0 we have : \begin{align*}
+    \wp(z) &= \frac{1}{z^2} +  \sum_{\omega \in \Lambda , \omega \neq 0 }\frac{1}{\omega^2}  \Bigl(\frac{1}{(1 - \frac{z}{\omega})^2} - 1\Bigr) \\
+     &=  \frac{1}{z^2} +  \sum_{\omega \in \Lambda , \omega \neq 0 }\frac{1}{\omega^2}  \sum_{n = 1}^\infty (n+1)\frac{z^n}{\omega^n}\\
+     &\text{We can change summation order as the series converges absolutely}\\
+     &=  \frac{1}{z^2} +  \sum_{n = 1}^\infty (n+1)z^n  \sum_{\omega \in \Lambda , \omega \neq 0 } \frac{1}{\omega^2}\frac{1}{\omega^n} \\
+     &=  \frac{1}{z^2} +  \sum_{n = 1}^\infty (n+1)z^n G_{n+2}  \\
+     &=  \frac{1}{z^2} +  \sum_{n = 1}^\infty (2n+1) G_{2n+2} z^{2n} \;\; \text{  since  } \forall n \geq 1 \; G_{2n+1} = 0  \\
+\end{align*}
+Theredore we can compute : \begin{align*}
+  \wp'(z) &= -\frac{2}{z^3} + \sum_{n = 1}^\infty (2n+1)2n G_{2n+2} z^{2n-1} \\
+  \wp'(z)^2 &= \frac{4}{z^6} - \frac{4}{z^3}\sum_{n = 1}^\infty (2n+1)2n G_{2n+2} z^{2n-1} + \Bigl(\sum_{n = 1}^\infty (2n+1)2n G_{2n+2} z^{2n-1}\Bigr)^2\\
+  &= \frac{4}{z^6} - \frac{24G_4}{z^2} + h(z) \;\;\;\; \text{ with h holomorphic on a neighborhood of 0}
+\end{align*} On the other hand :
+\begin{align*}
+  \wp(z) &= \frac{1}{z^2} + 3G_4z^2 + O(z^4) \\
+  \wp(z)^3 &= \frac{1}{z^6} + \frac{9G_4z^2}{z^4} + O(1) \\
+   4\wp(z)^3 &= \frac{4}{z^6} + \frac{36G_4}{z^2} + g(z)  \;\;\;\; \text{ with g holomorphic on a neighborhood of 0}\\
+\end{align*} Then we obtain that $\wp' - 4\wp^3 + 60G_4\wp$ is holomorphic on a neighborhood of 0. But by $\Lambda$-periodicity this function is holomorphic on 
+ $\mathbb{C}$. By continuity and $\Lambda$-periodicity it is also bounded on $\mathbb{C}$ and therefore constant.
+ Let's denote -$g_3$ this constant (one can show with similar calculations that $g_3 = 140G_6$). We have then :
+  \[ \wp'^2 = 4\wp^3 - g_2(\Lambda)\wp - g_3(\Lambda)  \]
 
 \paragraph{Theorem 3.7} The map : \[\ z + \Lambda \to (\wp(z),\wp'(z)) \]
 is a bijection from nonzero points of $\mathbb{C} / \Lambda$ to the elliptic curve associated to the equation \[\ y^2 = 4x^3 - g_2(\Lambda)x - g_3(\Lambda) \]
@@ -155,10 +176,10 @@ This makes the map :$  \left\{ \begin{array}{rcl} \mathbb{C}/\Lambda & \longrigh
 
 
 
-\paragraph{Theorem 3.9} Let $E_{\Lambda}$ and $E_{\Lambda'}$ be some elliptic curves associated to the lattices $\Lambda$ and $\Lambda'$ respectively,
+\paragraph{Theorem 3.9} Let $E$ and $E'$ be some elliptic curves associated to the lattices $\Lambda$ and $\Lambda'$ respectively,
 then the following statements are equivalent :\\
 
-  $i)$ $E_{\Lambda}$ and $E_{\Lambda'}$ are isomorphic
+  $i)$ $E$ and $E'$ are isomorphic
   
   $ii)$  $\mathbb{C}/\Lambda$ and $\mathbb{C}/\Lambda'$ are isomorphic.
   
@@ -209,7 +230,7 @@ $\phi: E\to E'$ such that $\phi(C) = C'$.
 a region that contains exactly one point from each orbit of $\Gamma$ action except some
 possible duplication on the edge.
 
-\paragraph{Proposition} The region $\mathcal{D} = \{ \tau \in \mathcal{H}  |\tau| \geq 1 \; and \; |Re(\tau)| \leq 1/2\}$ is a fundamental domain for $Y(SL_2(\mathbb{Z}))$.
+\paragraph{Proposition} The region $\mathcal{D} = \{ \tau \in \mathcal{H}\;  |\tau| \geq 1 \; and \; |Re(\tau)| \leq 1/2\}$ is a fundamental domain for $Y(SL_2(\mathbb{Z}))$.
 
 {\itshape \paragraph{} After identification of duplicate points on the edge we see that $Y(SL_2(\mathbb{Z})) \simeq SL_2(\mathbb{Z})\backslash \mathcal{D}$ is a punctured sphere.
 }
