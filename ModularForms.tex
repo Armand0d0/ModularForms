@@ -27,9 +27,16 @@
 \title{Modular Forms, Elliptic curves and Modular curves}
 \author{Armand Perrin, Samy, Damian}
 
+
 \begin{document}
 
 \maketitle%---------------------------------------------------------------
+
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+\newcommand{\SL}{\ensuremath{SL_2(\mathbb{Z})}}
+
 \part{The Modularity Theorem}
 
 \paragraph{}The modularity theorem was first partially proven by Andrew Wiles in 1995 (before known as the Taniyama-Shimura conjecture) 
@@ -106,6 +113,8 @@ group isomorphism. $\mathbb{C} / \Lambda$ and $\mathbb{C} / \Lambda'$ are then s
  preserves isomorphism. Therefore, the categories of lattices up to isomorphism and complex tori up to isomorphism are equivalent.
 }
 \section{Complex tori and elliptic curves}%------------------------------------------------------------------------------------------------------------------------------------
+\paragraph{} In this section we note $\Lambda = \omega_1\mathbb{Z} \oplus \omega_2\mathbb{Z}$ a fixed lattice.
+
 \paragraph{Definition 3.1} Given a sub-field $\mathbb{K}$ of $\mathbb{C}$, an \textbf{elliptic curve} over $\mathbb{K}$ is the set of points $(x,y) \in \mathbb{K}^2$ such that 
 \[\ y^2 = 4x^3 - ax - b \] for some $(a,b) \in \mathbb{K}^2$ such that $a^3-27b^2 \neq 0$.
 {\itshape \paragraph{} Remark: The condition $a^3-27b^2 \neq 0$ correspond to the curve being smooth.
@@ -128,13 +137,27 @@ whose solutions of the form (x,y,1) satisfies the equation : \[\ y^2 = x^3 + bx 
 
 
 
-\paragraph{Definition 3.4} Given a complex lattice $\Lambda$, the Weierstrass function $\wp$ is defined by : 
+\paragraph{Definition 3.4} The Weierstrass function $\wp$ is defined by : 
 \[\ \wp(z) = \frac{1}{z^2} +  \sum_{\omega \in \Lambda , \omega \neq 0 }\frac{1}{(z - \omega)^2} - \frac{1}{\omega^2} \]
-\paragraph{Proposition 3.5} $\wp$ and $\wp'$ are $\Lambda$-periodic.
+\paragraph{Proposition 3.5} \textbf{ }\\ $(i)\;\;\; \wp$ is even \\  $(ii)\;\;\wp$ and $\wp'$ are $\Lambda$-periodic.
+
+{\itshape \paragraph{} Proof :}
+For $(i)$ the sum is even because : \[\sum_{\omega \in \Lambda , \omega \neq 0 }\frac{1}{(-z - \omega)^2} - \frac{1}{\omega^2} = 
+ \sum_{\omega \in \Lambda , \omega \neq 0 }\frac{1}{(z -(- \omega))^2} - \frac{1}{\omega^2}\] and $\omega \mapsto -\omega$ is 
+ a permutation of $\Lambda\backslash \{0\}$\\.
+For $(ii)$, from the definition we derive : \[ \wp'(z) = -2\sum_{\omega\in\Lambda} \frac{1}{(z-\omega)^3} \]
+And for $i\in \{1,2\}$, we have : \begin{align*} \wp'(z + \omega_i) &= -2\sum_{\omega\in\Lambda} \frac{1}{(z + \omega_i-\omega)^3}\\
+  &= -2\sum_{\omega\in\Lambda} \frac{1}{(z - (\omega-\omega_i))^3}\\
+  &= -2\sum_{\omega\in\Lambda - \omega_i} \frac{1}{(z - \omega)^3}\\
+  &= \wp'(z)\\
+\end{align*}%\begin{align*}\end{align*}
+Since $\omega \mapsto \omega-\omega_i$ is a permutation of $\Lambda$. Thus $\wp'$ is  $\Lambda$-periodic.
+It follows that for $z\mapsto \wp(z + \omega_i) - \wp(z)$ has 0 derviative and is therefore constant. But it's value at $-\omega_i/2$ is 
+$\wp(\omega_i/2) - \wp(-\omega_i/2) = 0$ by parity.
 
 \paragraph{Theorem 3.6} The Weierstrass function satisfies the differential equation : 
 
-\[\ \wp'^2 = 4\wp^3 - g_2(\Lambda)\wp - g_3(\Lambda) \] for two complex numbers $g_2(\Lambda)$ and $g_3(\Lambda)$.
+\[\ \wp'^2 = 4\wp^3 - g_2\wp - g_3 \] for two complex numbers $g_2$ and $g_3$ that only depend on $\Lambda$.
 
 {\itshape \paragraph{} Proof :} For $z$ close to 0 we have : \begin{align*}
     \wp(z) &= \frac{1}{z^2} +  \sum_{\omega \in \Lambda , \omega \neq 0 }\frac{1}{\omega^2}  \Bigl(\frac{1}{(1 - \frac{z}{\omega})^2} - 1\Bigr) \\
@@ -144,7 +167,7 @@ whose solutions of the form (x,y,1) satisfies the equation : \[\ y^2 = x^3 + bx 
      &=  \frac{1}{z^2} +  \sum_{n = 1}^\infty (n+1)z^n G_{n+2}  \\
      &=  \frac{1}{z^2} +  \sum_{n = 1}^\infty (2n+1) G_{2n+2} z^{2n} \;\; \text{  since  } \forall n \geq 1 \; G_{2n+1} = 0  \\
 \end{align*}
-Theredore we can compute : \begin{align*}
+Therefore we can compute : \begin{align*}
   \wp'(z) &= -\frac{2}{z^3} + \sum_{n = 1}^\infty (2n+1)2n G_{2n+2} z^{2n-1} \\
   \wp'(z)^2 &= \frac{4}{z^6} - \frac{4}{z^3}\sum_{n = 1}^\infty (2n+1)2n G_{2n+2} z^{2n-1} + \Bigl(\sum_{n = 1}^\infty (2n+1)2n G_{2n+2} z^{2n-1}\Bigr)^2\\
   &= \frac{4}{z^6} - \frac{24G_4}{z^2} + h(z) \;\;\;\; \text{ with h holomorphic on a neighborhood of 0}
@@ -153,37 +176,96 @@ Theredore we can compute : \begin{align*}
   \wp(z) &= \frac{1}{z^2} + 3G_4z^2 + O(z^4) \\
   \wp(z)^3 &= \frac{1}{z^6} + \frac{9G_4z^2}{z^4} + O(1) \\
    4\wp(z)^3 &= \frac{4}{z^6} + \frac{36G_4}{z^2} + g(z)  \;\;\;\; \text{ with g holomorphic on a neighborhood of 0}\\
-\end{align*} Then we obtain that $\wp' - 4\wp^3 + 60G_4\wp$ is holomorphic on a neighborhood of 0. But by $\Lambda$-periodicity this function is holomorphic on 
+\end{align*} Then we obtain that $\wp' - 4\wp^3 + g_2\wp$ is holomorphic on a neighborhood of 0 for $g_2 := 60G_4$. But by $\Lambda$-periodicity this function is holomorphic on 
  $\mathbb{C}$. By continuity and $\Lambda$-periodicity it is also bounded on $\mathbb{C}$ and therefore constant.
  Let's denote -$g_3$ this constant (one can show with similar calculations that $g_3 = 140G_6$). We have then :
-  \[ \wp'^2 = 4\wp^3 - g_2(\Lambda)\wp - g_3(\Lambda)  \]
+  \[ \wp'^2 = 4\wp^3 - g_2\wp - g_3  \]
 
-\paragraph{Theorem 3.7} The map : \[\ z + \Lambda \to (\wp(z),\wp'(z)) \]
-is a bijection from nonzero points of $\mathbb{C} / \Lambda$ to the elliptic curve associated to the equation \[\ y^2 = 4x^3 - g_2(\Lambda)x - g_3(\Lambda) \]
+\paragraph{Lemma 3.7} If $f$ is a $\Lambda$-periodic meromorphic function, then :   \\$(i)$ $f$ has as many zeros as poles (counting multiplicity). \\
+$(ii)$ $f$ takes each value of $\C$ the same number of time on $\C / \Lambda$.\\
+$(iii)$ $\sum_{x\in \C /\Lambda } x\; v_x(f) = 0$ in $\C/\Lambda$ where $v_x(f )$ is the order of $f$ at $x$.\\
+$(iv)$ The Weierstrass function takes each value of $\mathbb{C}$ exactly twice at $z + \Lambda$ and $-z + \Lambda$.
+{\itshape \paragraph{} Proof :} Let $ D:=\{a\omega_1+b\omega_2 \in \mathbb{C} \;|\; a,b\in [0,1]\}$ and $\partial D$ it's counterclockwise border. 
+Since the function $g: z\mapsto f'(z)/f(z)$ 
+is meromorphic on $D$ wich is compact, it has finitely many poles on $D$. Therefore there exists $a\in\C$ such that g has no poles on $\gamma := a + \partial D$.
+Let's for example assume that $\gamma(0) = 0, \gamma(1/4) = \omega_1, \gamma(1/2) = \omega_1 + \omega_2, \gamma(3/4) = \omega_2.$
+This way we have by $\Lambda$-periodicity of $g$ that $\gamma(t)-\omega_1 = \gamma(1 + 1/4 -t) \;\;\forall t\in [1/4,1/2]$ and 
+$\gamma(t)-\omega_2 = \gamma(3/4 -t)\;\; \forall t\in [1/2,3/4]$.\\
+Let's show that $\frac{1}{2i\pi}\int_{a + \partial D} g(z)dz = 0$ : 
 
-\paragraph{Definition-Proposition 3.8 (Group law)} Given an elliptic curve $E$, $\mathbb{C}/\Lambda$ its associated complex tori and two points $U,V \in E$. There exists
-two points $u,v\in\mathbb{C}/\Lambda $ such that $U=(\wp(u),\wp'(u))$ and $ V = (\wp(v),\wp'(v))$. Let's consider the line of $\mathbb{C}^2$ going 
-through $U$ and $V$ if $U \neq V$ and the tangent line to $E$ at $U$ if $U=V$. This gives us an line equation of the form \[ ax+ by + c = 0  \]
-Lets consider the function $f$ over $\mathbb{C}/\Lambda$ such that: \[ f(z) = a\wp(z) + b\wp'(z) + c \]
+\begin{align*} \int_{a + \partial D} g(z)dz &= \int_{0}^1 g(\gamma(t))\gamma'(t)dt \\
+  &= \int_{0}^{1/4} g(\gamma(t)) \omega_1 dt +  \int_{1/4}^{1/2} g(\gamma(t)) \omega_2 dt +
+    \int_{1/2}^{3/4} g(\gamma(t)) (-\omega_1) dt +  \int_{3/4}^{1} g(\gamma(t)) (-\omega_2) dt \\
+  &= \int_{0}^{1/4} g(\gamma(t)) \omega_1 dt +  \int_{1/4}^{1/2} g(\gamma(t)- \omega_1) \omega_2 dt +
+    \int_{1/2}^{3/4} g(\gamma(t) - \omega_2) (-\omega_1) dt +  \int_{3/4}^{1} g(\gamma(t)) (-\omega_2) dt \\
+  &= \int_{0}^{1/4} g(\gamma(t)) \omega_1 dt +  \int_{1/4}^{1/2} g(\gamma(1+\frac{1}{4} -t)) \omega_2 dt +
+    \int_{1/2}^{3/4} g(\gamma(\frac{3}{4} - t)) (-\omega_1) dt +  \int_{3/4}^{1} g(\gamma(t)) (-\omega_2) dt \\
+  &= \int_{0}^{1/4} g(\gamma(t)) \omega_1 dt +  \int_{3/4}^{1} g(\gamma(t)) \omega_2 dt +
+    \int_{0}^{1/4} g(\gamma(t)) (-\omega_1) dt +  \int_{3/4}^{1} g(\gamma(t)) (-\omega_2) dt \\
+  &= 0
+\end{align*}
+Then by the Argument Principle, $f$ has as many zeros as poles (with multiplicity). If $k$ denotes the number of poles of $f$, then for any $c\in \C$, $f-c$ is also a 
+$\Lambda$-periodic meromorphic function with $k$ poles, therefore it has $k$ zeros and $f$ takes $k$ times the value $c$. 
+In particular for any $c \in \C$, $\wp$ takes the value $c$ exactly twice 
+because it's only pole is 0 and of multiplicity 2. And by parity it has to be in points of the form  $z + \Lambda$ and $-z + \Lambda$.\\
+To prove $(iii)$ we compute with similar method that : 
+\[ \int_{a + \partial D} zg(z)dz = \int_{0}^{1/4} \gamma(t)g(\gamma(t)) \omega_1 dt +  \int_{3/4}^{1} \gamma(\frac{5}{4} -t)g(\gamma(t)) \omega_2 dt +
+  \int_{0}^{1/4} \gamma(\frac{3}{4} - t)g(\gamma(t)) (-\omega_1) dt +  \int_{3/4}^{1}\gamma(t) g(\gamma(t)) (-\omega_2) dt\]
 
-We observe that $f$ has zeros at points $u,v$.
-If $ b \neq 0$ then $f$ has exactly one other zero $w$ and it is such that  $u + v + w + \Lambda = 0 + \Lambda$.
-If $b = 0$ then $u + v + \Lambda = 0 + \Lambda$ then let $w = 0$ and again $u + v + w + \Lambda = 0 + \Lambda$.
-Lets define a point $O$ "at infinity" to make notations coherent we denote $(\wp(0),\wp'(0)) := O$.
-Thus we define the group law on $E\cup\{O\}$ by : \[ U + V := (\wp(-u - v),\wp'(-u -v)) \]
-This makes the map :$  \left\{ \begin{array}{rcl} \mathbb{C}/\Lambda & \longrightarrow & E\cup \{O\} \\
+And since $\forall t\in [0,1/4] \; \gamma(\frac{3}{4} - t) - \gamma(t)  = \omega_2$ and $\forall t\in [3/4,1] \; \gamma(t) - \gamma(\frac{5}{4} - t)  = \omega_1$ we have : 
+
+\begin{align*} \int_{a + \partial D} zg(z)dz &= \omega_2\int_{0}^{1/4} g(\gamma(t)) \omega_1 dt + \omega_1\int_{3/4}^{1} g(\gamma(t)) (-\omega_2) dt \\
+    &= \omega_2\int_{[0,\omega_1]} g(z) dz - \omega_1\int_{[0,\omega_2]} g(z)  dz\\
+\end{align*}
+By studying the function $h : t \mapsto exp(\int_{[0,t]}g(z)dz)$ we can show that   $h(0) = h(\omega_1) = h(\omega_2)= 1$
+Therefore $\int_{[0,\omega_i]} g(z) dz \in 2i\pi\Z$ and $\frac{1}{2i\pi}\int_{a + \partial D} z g(z)dz \in \Lambda$.\\
+The Residue Theorem gives that modulo $\Lambda$ : \begin{align*}0 &= \frac{1}{2i\pi}\int_{a + \partial D} z g(z)dz\\
+  &= \sum_{x\in \C/\Lambda} Res(\frac{zf'(z)}{f(z)},x) Ind(\gamma,x)\\
+  &= \sum_{x\in \C/\Lambda}x v_x(f) \\
+\end{align*}
+
+
+\paragraph{Theorem 3.8} The map : \[\ z + \Lambda \to (\wp(z),\wp'(z)) \]
+is a bijection from nonzero points of $\mathbb{C} / \Lambda$ to the elliptic curve $E$ associated to the equation \[\ y^2 = 4x^3 - g_2x - g_3 \]
+{\itshape \paragraph{} Proof :} Let $(x,y) \in E$, the value $x$ is taken twice by $\wp$ at $z_0 + \Lambda$, $-z_0 + \Lambda$ for example.
+By looking at the equation we see that $(x,y)$ and $(x,-y)$ are the only two points of $E$ of the form $(x,*)$. On the other hand $(\wp(z_0+ \Lambda),\wp'(z_0+ \Lambda))$
+ and $(\wp(-z_0+ \Lambda),\wp'(-z_0+ \Lambda))$ are two such points by Theorem 3.6. \\ 
+ - if $ y \neq 0$, They are distinct because $\wp'(-z_0+ \Lambda) = -\wp'(z_0+ \Lambda) \neq \wp'(z_0+ \Lambda)$ 
+ as $\wp'(z_0+ \Lambda) = \pm y \neq 0.$ Thus $(x,y)$ is taken exactly once by $z + \Lambda \to (\wp(z),\wp'(z))$.\\ 
+ - if $y = 0$, then $\wp'(z_0 + \Lambda) = 0$. But this means that $z+ \Lambda \mapsto \wp(z+ \Lambda) - x$ 
+has a double zero at $z_0+ \Lambda$ since it also has only a double pole, by Lemma 3.7, $z_0 + \Lambda$ is it's only zero. Therefore $z_0 + \Lambda = -z_0 + \Lambda$ 
+and $(x,y)$ is taken exactly once by $z + \Lambda \to (\wp(z),\wp'(z))$. {\itshape This does not imply $z_0 + \Lambda = 0 + \Lambda$, for example $\omega_1/2$ is
+a 2-torsion point.}
+
+\paragraph{Definition-Proposition 3.9 (Group law)} Given an elliptic curve $E$, $\mathbb{C}/\Lambda$ its associated complex tori and two points $U,V \in E$. Let's consider the line of $\mathbb{C}^2$ going 
+through $U$ and $V$ if $U \neq V$ and the tangent line to $E$ at $U$ if $U=V$. Lets define a point $O$ "at infinity" to make notations coherent
+ we denote $(\wp(0),\wp'(0)) := O$. From now on we will identify $E$ with $E\cup \{O\}$.
+Then this lines intersects $E$ at exactly one other point $W = (W_1,W_2)$.
+Thus we define the group law on $E\cup\{O\}$ by : \[ U + V :=(W_1,-W_2) \]
+This makes the map :$  \left\{ \begin{array}{rcl} \mathbb{C}/\Lambda & \longrightarrow & E \\
   z + \Lambda & \longmapsto & (\wp(z),\wp'(z)) \\ \end{array} \right. $ a group isomorphism.
 
+{\itshape \paragraph{} Proof :}
+There exists two points $u,v\in\mathbb{C}/\Lambda $ such that $U=(\wp(u),\wp'(u))$ and $ V = (\wp(v),\wp'(v))$ by Theorem 3.8.
+The line equation is of the form \[ ax + by + c = 0  \]
+Lets consider the function $f$ over $\mathbb{C}/\Lambda$ such that: \[ f(z) = a\wp(z) + b\wp'(z) + c \]
+We observe that $f$ has zeros at points $u,v$.
 
+-If $a = b = 0$, then ...\\
+-If $b=0$ and $a \neq 0$ then $f$ has a double pole at 0 and it's zeros are $u$ and $v$ by $(i)$ of the Lemma 3.7 
+and $(iii)$ gives us  $u + v + 2 \cdot 0 + \Lambda =0 + \Lambda $. In that case we let $w:= 0 + \Lambda$.\\
+-If $b\neq 0$ then $f$ has a triple pole at 0 so it has a third zero $w$ again by Lemma 3.7 and $u + v + w + \Lambda = 0 + \Lambda$ by $(iii)$. \\
+-group law
+-morphism
 
-\paragraph{Theorem 3.9} Let $E$ and $E'$ be some elliptic curves associated to the lattices $\Lambda$ and $\Lambda'$ respectively,
+\paragraph{Theorem 3.10} Let $E$ and $E'$ be some elliptic curves associated to the lattices $\Lambda$ and $\Lambda'$ respectively,
 then the following statements are equivalent :\\
 
-  $i)$ $E$ and $E'$ are isomorphic
+  $(i)$ $E$ and $E'$ are isomorphic
   
-  $ii)$  $\mathbb{C}/\Lambda$ and $\mathbb{C}/\Lambda'$ are isomorphic.
+  $(ii)$  $\mathbb{C}/\Lambda$ and $\mathbb{C}/\Lambda'$ are isomorphic.
   
-  $iii)$  $\Lambda$ and $\Lambda'$ are isomorphic. \\ 
+  $(iii)$  $\Lambda$ and $\Lambda'$ are isomorphic. \\ 
   
 {\itshape \paragraph{}This theorem reduces the problem of parametrization of elliptic curves up to isomorphism to the much simpler problem of parametrization of
  lattices up to isomorphism. In what follows we will identify those 3 categories as the same mathematical objects.
@@ -247,7 +329,7 @@ possible duplication on the edge.
 \paragraph{Definition} A complex elliptic curve $E$ is said to be \textbf{modular} if there exists an integer $N$ such that there is a surjection holomorphic map $\varphi$ 
 from the modular curve $X_0(N)$ to $E$ as Riemann surfaces. $\varphi$ is the called a modular parametrization of $E$.
 
-\paragraph{TODO} congruence subgroup, ex ref \cite{zhou} $G_2$ $g_2(\Lambda)$ Eisenstein series genus...
+\paragraph{TODO} congruence subgroup, ex ref \cite{zhou} \cite{springer} $G_2$ Eisenstein series, convergence of $\wp$, genus...
 
 
 \printbibliography %Prints bibliography

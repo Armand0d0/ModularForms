@@ -1,15 +1,15 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'ModularForms.blg'
-[108] biber:340> INFO - === Wed May  7, 2025, 21:33:02
-[129] Biber.pm:418> INFO - Reading 'ModularForms.bcf'
-[210] Biber.pm:978> INFO - Found 1 citekeys in bib section 0
-[228] Biber.pm:4401> INFO - Processing section 0
-[243] Biber.pm:4592> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[244] bibtex.pm:1713> INFO - LaTeX decoding ...
-[246] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography.bib'
-[264] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[264] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[264] Biber.pm:4221> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[264] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
-[275] bbl.pm:654> INFO - Writing 'ModularForms.bbl' with encoding 'UTF-8'
-[276] bbl.pm:757> INFO - Output to ModularForms.bbl
+[103] biber:340> INFO - === Fri May  9, 2025, 15:58:30
+[122] Biber.pm:418> INFO - Reading 'ModularForms.bcf'
+[203] Biber.pm:978> INFO - Found 2 citekeys in bib section 0
+[220] Biber.pm:4401> INFO - Processing section 0
+[234] Biber.pm:4592> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[235] bibtex.pm:1713> INFO - LaTeX decoding ...
+[239] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography.bib'
+[273] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[273] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[273] Biber.pm:4221> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[273] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[282] bbl.pm:654> INFO - Writing 'ModularForms.bbl' with encoding 'UTF-8'
+[283] bbl.pm:757> INFO - Output to ModularForms.bbl
