@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.4.12)  11 MAY 2025 17:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.4.12)  11 MAY 2025 19:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -920,11 +920,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 281--281
 <sphere.png, id=50, 414.54875pt x 162.6075pt>
 File: sphere.png Graphic file (type png)
 <use sphere.png>
-Package pdftex.def Info: sphere.png  used on input line 346.
+Package pdftex.def Info: sphere.png  used on input line 343.
 (pdftex.def)             Requested size: 414.54773pt x 162.6071pt.
  [8 <./sphere.png>]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-61.
+58.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 ) [9] (./ModularForms.aux)
@@ -961,7 +961,7 @@ dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm7.pfb>
-Output written on ModularForms.pdf (9 pages, 303831 bytes).
+Output written on ModularForms.pdf (9 pages, 303452 bytes).
 PDF statistics:
  415 PDF objects out of 1000 (max. 8388607)
  98 compressed objects within 1 object stream
