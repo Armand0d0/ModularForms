@@ -13,7 +13,7 @@
 % Useful packages
 \usepackage{amsmath}
 \usepackage{amssymb}
-
+\usepackage{tikz-cd}
 %\usepackage{stmaryrd}
 \usepackage{graphicx}
 \graphicspath{ {./} }
@@ -106,12 +106,20 @@ $\tau' = \gamma \cdot \tau$ for some $\gamma \in SL_2(\mathbb{Z})$.
 \paragraph{Definition 2.7} An \textbf{isomorphism} of complex tori $\varphi : \mathbb{C} / \Lambda \to \mathbb{C} / \Lambda'$ is a holomorphic 
 group isomorphism. $\mathbb{C} / \Lambda$ and $\mathbb{C} / \Lambda'$ are then said to be isomorphic.
 
-\paragraph{Theorem 2.8}  Two complex tori $\mathbb{C} / \Lambda$ and $\mathbb{C} / \Lambda'$ are isomorphic if and only if  $\Lambda$ and $\Lambda'$ are isomorphic.
+\paragraph{Proposition 2.8} Any complex tori isomorphism $\varphi : \mathbb{C} / \Lambda \to \mathbb{C} / \Lambda'$ is of the form : $\varphi(z) = mz$ 
+with $m\Lambda = \Lambda'$.
+{\itshape \paragraph{}Proof: } Here we use a lifting theorem : there exists a holomorphic map $\widetilde{\varphi}: \C \to \C$ that lifts $\varphi$. Meaning that 
+$\varphi(z + \Lambda) = \widetilde{\varphi}(z) + \Lambda'$. See \cite{munkres} 
+for details. For any $\lambda \in \Lambda$ the map $z\mapsto \widetilde{\varphi}(z + \lambda) - \widetilde{\varphi}(z)$ is continuous but takes it's values in $\Lambda'$ 
+that is discrete therefore it is constant. Thus, $\widetilde{\varphi}'(z + \lambda) = \widetilde{\varphi}'(z)$, so $\widetilde{\varphi}'$ is $\Lambda$-periodic. But by 
+Liouville's theorem a bounded holomorphic function is constant. Integrating gives that $\widetilde{\varphi}$ is a degre on polynomial, i.e there exists $m,a,\in \C$ such 
+that $\widetilde{\varphi}(z) = mz + a$. But since $\varphi$ is also a group isomorphism, we have $0 + \Lambda' = \varphi(0 + \Lambda) = \widetilde{\varphi}(0) + \Lambda' 
+ = a + \Lambda'$. So $a\in \Lambda'$. Similarly, for $\lambda \in \Lambda \; \widetilde{\varphi}(\lambda) = \varphi(\Lambda) = \Lambda'$. So $m\Lambda \subset \Lambda'$. 
+ If the inclusion was strict there would be some $z\in \Lambda'$ such that $z/m \notin \Lambda$ but $\varphi(z/m + \Lambda) = \Lambda'$ and Ker$\varphi  = \Lambda$ by 
+ injectivity. So $m\Lambda = \Lambda'$.
+ Reducing modulo $\Lambda'$ we get $\varphi(z + \Lambda) = mz + \Lambda'= m(z + \Lambda)$.
 
 
-{\itshape \paragraph{}Remark: The map  $\Psi: \Lambda \mapsto \mathbb{C}/\Lambda$ is  a bijection from the set of lattices to the set of complex tori that
- preserves isomorphism. Therefore, the categories of lattices up to isomorphism and complex tori up to isomorphism are equivalent.
-}
 \section{Complex tori and elliptic curves}%------------------------------------------------------------------------------------------------------------------------------------
 \paragraph{} In this section we note $\Lambda = \omega_1\mathbb{Z} \oplus \omega_2\mathbb{Z}$ a fixed lattice.
 
@@ -225,7 +233,7 @@ The Residue Theorem gives that modulo $\Lambda$ : \begin{align*}0 &= \frac{1}{2i
 \end{align*}
 
 
-\paragraph{Theorem 3.8} The map : \[\ z + \Lambda \to (\wp(z),\wp'(z)) \]
+\paragraph{Theorem 3.8} The map : \[\ \Psi : z + \Lambda \to (\wp(z),\wp'(z)) \]
 is a bijection from nonzero points of $\mathbb{C} / \Lambda$ to the elliptic curve $E$ associated to the equation \[\ y^2 = 4x^3 - g_2x - g_3 \]
 {\itshape \paragraph{} Proof :} Let $(x,y) \in E$, the value $x$ is taken twice by $\wp$ at $z_0 + \Lambda$, $-z_0 + \Lambda$ for example.
 By looking at the equation we see that $(x,y)$ and $(x,-y)$ are the only two points of $E$ of the form $(x,*)$. On the other hand $(\wp(z_0+ \Lambda),\wp'(z_0+ \Lambda))$
@@ -238,25 +246,28 @@ and $(x,y)$ is taken exactly once by $z + \Lambda \to (\wp(z),\wp'(z))$. {\itsha
 a 2-torsion point.}
 
 \paragraph{Definition-Proposition 3.9 (Group law)} Given an elliptic curve $E$, $\mathbb{C}/\Lambda$ its associated complex tori and two points $U,V \in E$. Let's consider the line of $\mathbb{C}^2$ going 
-through $U$ and $V$ if $U \neq V$ and the tangent line to $E$ at $U$ if $U=V$. Lets define a point $O$ "at infinity" to make notations coherent
- we denote $(\wp(0),\wp'(0)) := O$. From now on we will identify $E$ with $E\cup \{O\}$.
+through $U$ and $V$ if $U \neq V$ and the tangent line to $E$ at $U$ if $U=V$. Lets define a point $O$ "at infinity" that we will consider to be
+on any vertical line. To make notations coherent
+ we denote $(\wp(0),\pm\wp'(0)) := O$. From now on we will identify $E$ with $E\cup\{O\}$.
 Then this lines intersects $E$ at exactly one other point $W = (W_1,W_2)$.
-Thus we define the group law on $E\cup\{O\}$ by : \[ U + V :=(W_1,-W_2) \]
-This makes the map :$  \left\{ \begin{array}{rcl} \mathbb{C}/\Lambda & \longrightarrow & E \\
+Thus we define the group law on $E$ by : \[ \left\{ \begin{array}{rcl} U + V &=(W_1,-W_2) \\ U + O &= O + U = U \end{array}\right. \]
+This makes the map $\Psi :   \left\{ \begin{array}{rcl} \mathbb{C}/\Lambda & \longrightarrow & E \\
   z + \Lambda & \longmapsto & (\wp(z),\wp'(z)) \\ \end{array} \right. $ a group isomorphism.
 
 {\itshape \paragraph{} Proof :}
 There exists two points $u,v\in\mathbb{C}/\Lambda $ such that $U=(\wp(u),\wp'(u))$ and $ V = (\wp(v),\wp'(v))$ by Theorem 3.8.
-The line equation is of the form \[ ax + by + c = 0  \]
-Lets consider the function $f$ over $\mathbb{C}/\Lambda$ such that: \[ f(z) = a\wp(z) + b\wp'(z) + c \]
-We observe that $f$ has zeros at points $u,v$.
+The line equation is of the form \[ ax + by + c = 0  \] with $(a,b) \neq (0,0)$. 
+Lets consider the meromorphic function $f$ over $\mathbb{C}/\Lambda$ such that: \[ f(z) = a\wp(z) + b\wp'(z) + c \]
 
--If $a = b = 0$, then ...\\
--If $b=0$ and $a \neq 0$ then $f$ has a double pole at 0 and it's zeros are $u$ and $v$ by $(i)$ of the Lemma 3.7 
-and $(iii)$ gives us  $u + v + 2 \cdot 0 + \Lambda =0 + \Lambda $. In that case we let $w:= 0 + \Lambda$.\\
--If $b\neq 0$ then $f$ has a triple pole at 0 so it has a third zero $w$ again by Lemma 3.7 and $u + v + w + \Lambda = 0 + \Lambda$ by $(iii)$. \\
--group law
--morphism
+If $u,v \neq 0$ we observe that $f$ has zeros at points $u,v$ and if $u=v$ then $u$ is a zero of order 2 since the line is tangent to $E$.\\
+-If $b=0$ then $f$ has a double pole at 0 and it's zeros are $u$ and $v$ by $(i)$ of the Lemma 3.7. 
+and $(iii)$ gives us  $u + v + 2 \cdot 0  =0  $. In that case we let $w:= 0 $.\\
+-If $b\neq 0$ then $f$ has a triple pole at 0. It has a third zero $w$ again by Lemma 3.7 and $u + v + w  = 0 $ by $(iii)$. \\
+If $u$ or $v$ is 0 then define $w := - u -v$. 
+We have in all cases $ u + v + w = 0$. 
+And $w= 0$ or $f(w) = 0 $ so if $W := (\wp(w),\wp'(w))$ then $W$ is on the line defined by $U,V$ and 
+$U+V = (\wp(w),-\wp'(w)) = (\wp(-w),\wp'(-w)) = (\wp(u + v),\wp'(u + v))$.
+Therefore $\Psi(u + v) = \Psi(u) + \Psi(v)$. And $\Psi : \C/\Lambda \to E$ surjects. So $(E,+)$ is a group and $\Psi$ an isomorphism, it bijects by Theorem 3.8.
 
 \paragraph{Theorem 3.10} Let $E$ and $E'$ be some elliptic curves associated to the lattices $\Lambda$ and $\Lambda'$ respectively,
 then the following statements are equivalent :\\
@@ -266,7 +277,19 @@ then the following statements are equivalent :\\
   $(ii)$  $\mathbb{C}/\Lambda$ and $\mathbb{C}/\Lambda'$ are isomorphic.
   
   $(iii)$  $\Lambda$ and $\Lambda'$ are isomorphic. \\ 
-  
+
+{\itshape \paragraph{} Proof :} - $(i) \iff (ii)$ : Looking at the diagram : \\ \[
+\begin{tikzcd}
+\C/\Lambda \arrow[r, "\Psi"] \arrow[d,"\varphi",dashed] & E \arrow[d,"\psi",dashed] \\
+\C/\Lambda' \arrow[r, "\Psi'"]         & E'         
+\end{tikzcd}\]
+we see that if there is such an isomorphism $\varphi$ then $\Psi' \circ \varphi \circ \Psi^{-1} :  E\to E'$ is also isomorphism. \\
+Similarly if there is such an isomorphism $\psi$ then $ \Psi'^{-1} \circ \psi \circ \Psi : \mathbb{C} / \Lambda \to \mathbb{C} / \Lambda'$ is also isomorphism.\\
+- $(ii) \implies (iii)$ is given by proposition 2.8.\\
+- $(iii) \implies (ii)$ Let $m \in \C$ such that $m\Lambda = \Lambda'$. Then the map $\varphi : z + \Lambda \mapsto mz + \Lambda'$ is clearly a holomorphic group morphism.
+We have $\Lambda = \frac{1}{m}\Lambda'$ and $\psi :  \mathbb{C} / \Lambda' \to \mathbb{C} / \Lambda$ given by $ \psi(z + \Lambda') = z/m + \Lambda $ is the inverse 
+of $\varphi$. Therefore $\varphi$ is an isomorphism of complex tori.
+ 
 {\itshape \paragraph{}This theorem reduces the problem of parametrization of elliptic curves up to isomorphism to the much simpler problem of parametrization of
  lattices up to isomorphism. In what follows we will identify those 3 categories as the same mathematical objects.
 }

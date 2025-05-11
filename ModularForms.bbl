@@ -19,6 +19,27 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{munkres}{book}{}
+      \name{author}{1}{}{%
+        {{hash=681c503f86c5b4758bc41fce37310d03}{%
+           family={Munkres},
+           familyi={M\bibinitperiod},
+           given={James\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{681c503f86c5b4758bc41fce37310d03}
+      \strng{fullhash}{681c503f86c5b4758bc41fce37310d03}
+      \strng{bibnamehash}{681c503f86c5b4758bc41fce37310d03}
+      \strng{authorbibnamehash}{681c503f86c5b4758bc41fce37310d03}
+      \strng{authornamehash}{681c503f86c5b4758bc41fce37310d03}
+      \strng{authorfullhash}{681c503f86c5b4758bc41fce37310d03}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Prentice-Hall, second edition, 2000.}
+      \field{title}{Topology}
+    \endentry
     \entry{springer}{book}{}
       \name{author}{1}{}{%
         {{hash=d09560d525b83a54c34a2117db681b5c}{%
